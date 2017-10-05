@@ -13,8 +13,8 @@ namespace ConsoleApp1
 
             //users choice of shape
             string shape;
-            double shapeBase;
-            double shapeHeight;
+            double triangleBaseOutput = 0;
+            double shapeHeight = 0;
             string triangleChoice;
 
             do
@@ -23,7 +23,7 @@ namespace ConsoleApp1
 
                 //Ask user what they want to find the area of
                 Console.WriteLine("Find the area or circumference of a shape.");
-                Console.WriteLine("1. Triangle \n2. Rectangle \n 3. Trapezoid \n4. Parallelogram \n5. Circle \n6. Quit");
+                Console.WriteLine("1. Triangle \n2. Rectangle \n3. Trapezoid \n4. Parallelogram \n5. Circle \n6. Quit");
 
                 shape = Console.ReadLine();
 
@@ -37,9 +37,9 @@ namespace ConsoleApp1
                         Console.WriteLine("To get the area of your triangle we need the base and the height of the triangle.");
                         Console.WriteLine("1. Enter the base.");
 
-                        if (shapeBase != 0)
+                        if (triangleBaseOutput != 0)
                         {
-                            Console.WriteLine("Your current base is {0}", shapeBase);
+                            Console.WriteLine("Your current base is {0}", triangleBaseOutput);
                         }
 
                         Console.WriteLine("2. Enter the height.");
@@ -52,13 +52,22 @@ namespace ConsoleApp1
                         Console.WriteLine("3. Calculate the area of your triangle.");
                         Console.WriteLine("4. Go back");
                         triangleChoice = Console.ReadLine();
+                        Console.Clear();
+
+                        if (triangleChoice == "1")
+                        {
+                            Console.WriteLine("Please enter the base of your triangle");
+                            string triangleBaseInput = double.TryParse(Console.ReadLine(),out triangleBaseOutput);
+                        
+                        }
 
                     }
-                    while (triangleChoice == "4");
-
+                    while (triangleChoice != "4");
+                    Console.Clear();
                 }
             }
             while (shape != "6");
+            Console.Clear();
         }
     }
 }
