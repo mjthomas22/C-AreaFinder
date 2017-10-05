@@ -13,9 +13,12 @@ namespace ConsoleApp1
 
             //users choice of shape
             string shape;
+            bool input = true;
+            //triangle variables
             double triangleBaseOutput = 0;
-            double shapeHeight = 0;
+            double triangleHeightOutput = 0;
             string triangleChoice;
+            double triangleArea;
 
             do
             {
@@ -33,32 +36,76 @@ namespace ConsoleApp1
                 {
                     do
                     {
+                        Console.Clear();
                         //gather information to get the area of a triangle
                         Console.WriteLine("To get the area of your triangle we need the base and the height of the triangle.");
-                        Console.WriteLine("1. Enter the base.");
 
-                        if (triangleBaseOutput != 0)
-                        {
-                            Console.WriteLine("Your current base is {0}", triangleBaseOutput);
-                        }
+                        Console.WriteLine("1. Enter the base.");
 
                         Console.WriteLine("2. Enter the height.");
 
-                        if (shapeHeight != 0)
+                        //show user the current value of base
+                        if (triangleBaseOutput != 0)
                         {
-                            Console.WriteLine("Your current height is {0}", shapeHeight);
+                            Console.WriteLine("\nYour current base is {0}", triangleBaseOutput);
+                        }
+                        //show user the current value of height
+                        if (triangleHeightOutput != 0)
+                        {
+                            Console.WriteLine("Your current height is {0}", triangleHeightOutput);
                         }
 
                         Console.WriteLine("3. Calculate the area of your triangle.");
+
                         Console.WriteLine("4. Go back");
+
                         triangleChoice = Console.ReadLine();
+
                         Console.Clear();
 
+                        //user enters the base of the triangle
                         if (triangleChoice == "1")
                         {
+
                             Console.WriteLine("Please enter the base of your triangle");
-                            string triangleBaseInput = double.TryParse(Console.ReadLine(),out triangleBaseOutput);
-                        
+                            //checks to make sure user entered a number
+                            input = double.TryParse(Console.ReadLine(), out triangleBaseOutput);
+
+                            while (input == false)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Please enter a number value for the base");
+                                Console.WriteLine("Please enter the base of your triangle");
+                                input = double.TryParse(Console.ReadLine(), out triangleBaseOutput);
+                            }
+                            Console.Clear();
+                        }
+
+                        //user enters the base of the triangle
+                        if (triangleChoice == "2")
+                        {
+
+                            Console.WriteLine("Please enter the height of your triangle");
+                            //checks to make sure user entered a number
+                            input = double.TryParse(Console.ReadLine(), out triangleHeightOutput);
+
+                            while (input == false)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Please enter a number value for the height");
+                                Console.WriteLine("Please enter the height of your triangle");
+                                input = double.TryParse(Console.ReadLine(), out triangleHeightOutput);
+                            }
+                            Console.Clear();
+                        }
+
+                        //calculate area of triangle for the user
+                        if (triangleChoice == "3")
+                        {
+                            Console.Clear();
+                            triangleArea = .5 * triangleBaseOutput * triangleHeightOutput;
+                            Console.WriteLine("Your triangle's area is {0}. Press enter to continue", triangleArea);
+                            Console.ReadLine();
                         }
 
                     }
