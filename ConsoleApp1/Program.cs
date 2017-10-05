@@ -15,6 +15,8 @@ namespace ConsoleApp1
             string shape;
             double shapeBase;
             double shapeHeight;
+            string triangleChoice;
+
             do
             {
 
@@ -29,18 +31,31 @@ namespace ConsoleApp1
 
                 if (shape == "1")
                 {
-                    //gather information to get the area of a triangle
-                    Console.WriteLine("To get the area of your triangle we need the base and the height of the triangle.");
-                    Console.WriteLine("1.Enter the base.");
-
-                    if (shapeBase != 0)
+                    do
                     {
-                        Console.WriteLine("Your current base is {0}", shapeBase);
+                        //gather information to get the area of a triangle
+                        Console.WriteLine("To get the area of your triangle we need the base and the height of the triangle.");
+                        Console.WriteLine("1. Enter the base.");
+
+                        if (shapeBase != 0)
+                        {
+                            Console.WriteLine("Your current base is {0}", shapeBase);
+                        }
+
+                        Console.WriteLine("2. Enter the height.");
+
+                        if (shapeHeight != 0)
+                        {
+                            Console.WriteLine("Your current height is {0}", shapeHeight);
+                        }
+
+                        Console.WriteLine("3. Calculate the area of your triangle.");
+                        Console.WriteLine("4. Go back");
+                        triangleChoice = Console.ReadLine();
+
                     }
+                    while (triangleChoice == "4");
 
-                    Console.WriteLine("2.Enter the height.");
-
-                    if()
                 }
             }
             while (shape != "6");
