@@ -34,6 +34,12 @@ namespace ConsoleApp1
             string trapezoidChoice;
             double trapezoidArea;
 
+            //Parallelogram variables
+            double parallelogramBaseOutput = 0;
+            double parallelogramHeightOutput = 0;
+            string parallelogramChoice;
+            double parallelogramArea;
+
             do
             {
 
@@ -235,7 +241,7 @@ namespace ConsoleApp1
                         {
                             Console.WriteLine("Your current height is {0}", trapezoidHeightOutput);
                         }
-                        Console.WriteLine("\n4. Calculate the area of your trapezoid");
+                        Console.WriteLine("4. Calculate the area of your trapezoid");
                         Console.WriteLine("5. Go Back");
 
                         trapezoidChoice = Console.ReadLine();
@@ -254,9 +260,10 @@ namespace ConsoleApp1
 
                                 input = double.TryParse(Console.ReadLine(), out firstTrapezoidWidthOutput);
                             }
+                            Console.Clear();
                         }
 
-                        if(trapezoidChoice == "2")
+                        if (trapezoidChoice == "2")
                         {
                             Console.WriteLine("Please enter the second width.");
                             input = double.TryParse(Console.ReadLine(), out secondTrapezoidWidthOutput);
@@ -268,6 +275,7 @@ namespace ConsoleApp1
                                 Console.WriteLine("Please enter the second width.");
                                 input = double.TryParse(Console.ReadLine(), out secondTrapezoidWidthOutput);
                             }
+                            Console.Clear();
                         }
 
                         if (trapezoidChoice == "3")
@@ -282,11 +290,35 @@ namespace ConsoleApp1
                                 Console.WriteLine("Please enter the height.");
                                 input = double.TryParse(Console.ReadLine(), out trapezoidHeightOutput);
                             }
+                            Console.Clear();
                         }
 
-                        if
+                        if (trapezoidChoice == "4")
+                        {
+                            trapezoidArea = .5*(firstTrapezoidWidthOutput + secondTrapezoidWidthOutput) * trapezoidHeightOutput;
+                            Console.WriteLine("The area of your trapezoid is {0}. Press enter to continue.", trapezoidArea);
+                            Console.ReadLine();
+                        }
                     }
 
+                    while (trapezoidChoice != "5");
+                }
+
+                //Parallelogram Shape
+                if (shape == "4")
+                {
+                    //gather information to find the area of the Parallelogram
+                    do
+                    {
+                        Console.WriteLine("To get the area of the parallelogram we need the base and the height.");
+                        Console.WriteLine("1. Enter the base");
+                        Console.WriteLine("2. Enter the height");
+
+                        if (parallelogramBaseOutput != 0) ;
+                        {
+
+                        }
+                    }
                 }
             }
             while (shape != "6");
