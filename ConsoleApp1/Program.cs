@@ -135,24 +135,24 @@ namespace ConsoleApp1
                     {
                         Console.Clear();
                         //gather information to get the area of a triangle
-                        Console.WriteLine("To get the area of your rectangle we need the width and height of the rectangle.");
+                        Console.WriteLine("To get the area of your rectangle we need the width and height of the rectangle");
 
-                        Console.WriteLine("1. Enter the width.");
+                        Console.WriteLine("1. Enter the width");
 
-                        Console.WriteLine("2. Enter the height.");
+                        Console.WriteLine("2. Enter the height");
 
                         //show user the current value of rectangle width
                         if (rectangleWidthOutput != 0)
                         {
-                            Console.WriteLine("\nYour current width is {0}", rectangleWidthOutput);
+                            Console.WriteLine("\nYour current width is {0}.", rectangleWidthOutput);
                         }
                         //show user the current value of rectangle height
                         if (rectangleHeightOutput != 0)
                         {
-                            Console.WriteLine("Your current height is {0}", rectangleHeightOutput);
+                            Console.WriteLine("Your current height is {0}.", rectangleHeightOutput);
                         }
 
-                        Console.WriteLine("3. Calculate the area of your rectangle.");
+                        Console.WriteLine("3. Calculate the area of your rectangle");
 
                         Console.WriteLine("4. Go back");
 
@@ -164,15 +164,15 @@ namespace ConsoleApp1
                         if (rectangleChoice == "1")
                         {
 
-                            Console.WriteLine("Please enter the width of your rectangle");
+                            Console.WriteLine("Please enter the width of your rectangle.");
                             //checks to make sure user entered a number
                             input = double.TryParse(Console.ReadLine(), out rectangleWidthOutput);
 
                             while (input == false)
                             {
                                 Console.Clear();
-                                Console.WriteLine("Please enter a number value for the width");
-                                Console.WriteLine("Please enter the width of your rectangle");
+                                Console.WriteLine("Please enter a number value for the width.");
+                                Console.WriteLine("Please enter the width of your rectangle.");
                                 input = double.TryParse(Console.ReadLine(), out rectangleWidthOutput);
                             }
                             Console.Clear();
@@ -182,15 +182,15 @@ namespace ConsoleApp1
                         if (rectangleChoice == "2")
                         {
 
-                            Console.WriteLine("Please enter the height of your rectangle");
+                            Console.WriteLine("Please enter the height of your rectangle.");
                             //checks to make sure user entered a number
                             input = double.TryParse(Console.ReadLine(), out rectangleHeightOutput);
 
                             while (input == false)
                             {
                                 Console.Clear();
-                                Console.WriteLine("Please enter a number value for the height");
-                                Console.WriteLine("Please enter the height of your rectangle");
+                                Console.WriteLine("Please enter a number value for the height.");
+                                Console.WriteLine("Please enter the height of your rectangle.");
                                 input = double.TryParse(Console.ReadLine(), out rectangleHeightOutput);
                             }
                             Console.Clear();
@@ -201,7 +201,7 @@ namespace ConsoleApp1
                         {
                             Console.Clear();
                             rectangleArea = rectangleHeightOutput * rectangleWidthOutput;
-                            Console.WriteLine("Your rectangles's area is {0}. Press enter to continue", rectangleArea);
+                            Console.WriteLine("Your rectangles's area is {0}. Press enter to continue.", rectangleArea);
                             Console.ReadLine();
                         }
 
@@ -223,12 +223,70 @@ namespace ConsoleApp1
                         Console.WriteLine("3. Height");
 
                         //show current values of widths and height
-                        if(firstTrapezoidWidthOutput != 0)
+                        if (firstTrapezoidWidthOutput != 0)
                         {
-                            Console.WriteLine("")
+                            Console.WriteLine("\nYour current first width is {0}", firstTrapezoidWidthOutput);
+                        }
+                        if (secondTrapezoidWidthOutput != 0)
+                        {
+                            Console.WriteLine("Your current second width is {0}", secondTrapezoidWidthOutput);
+                        }
+                        if (trapezoidHeightOutput != 0)
+                        {
+                            Console.WriteLine("Your current height is {0}", trapezoidHeightOutput);
+                        }
+                        Console.WriteLine("\n4. Calculate the area of your trapezoid");
+                        Console.WriteLine("5. Go Back");
+
+                        trapezoidChoice = Console.ReadLine();
+                        Console.Clear();
+
+                        if (trapezoidChoice == "1")
+                        {
+                            Console.WriteLine("Please enter the first width.");
+                            input = double.TryParse(Console.ReadLine(), out firstTrapezoidWidthOutput);
+
+                            while (input == false)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Please enter a number value for the width.");
+                                Console.WriteLine("Please enter the first width.");
+
+                                input = double.TryParse(Console.ReadLine(), out firstTrapezoidWidthOutput);
+                            }
                         }
 
+                        if(trapezoidChoice == "2")
+                        {
+                            Console.WriteLine("Please enter the second width.");
+                            input = double.TryParse(Console.ReadLine(), out secondTrapezoidWidthOutput);
+
+                            while (input == false)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Please enter a number value for the width.");
+                                Console.WriteLine("Please enter the second width.");
+                                input = double.TryParse(Console.ReadLine(), out secondTrapezoidWidthOutput);
+                            }
+                        }
+
+                        if (trapezoidChoice == "3")
+                        {
+                            Console.WriteLine("Please enter the height.");
+                            input = double.TryParse(Console.ReadLine(), out trapezoidHeightOutput);
+
+                            while (input == false)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Plase enter a number value for the height.");
+                                Console.WriteLine("Please enter the height.");
+                                input = double.TryParse(Console.ReadLine(), out trapezoidHeightOutput);
+                            }
+                        }
+
+                        if
                     }
+
                 }
             }
             while (shape != "6");
