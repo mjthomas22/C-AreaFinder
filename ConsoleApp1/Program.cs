@@ -40,6 +40,11 @@ namespace ConsoleApp1
             string parallelogramChoice;
             double parallelogramArea;
 
+            //Circle variables
+            double circleDiameter = 0;
+            double circleCircumerence;
+
+
             do
             {
 
@@ -295,7 +300,7 @@ namespace ConsoleApp1
 
                         if (trapezoidChoice == "4")
                         {
-                            trapezoidArea = .5*(firstTrapezoidWidthOutput + secondTrapezoidWidthOutput) * trapezoidHeightOutput;
+                            trapezoidArea = .5 * (firstTrapezoidWidthOutput + secondTrapezoidWidthOutput) * trapezoidHeightOutput;
                             Console.WriteLine("The area of your trapezoid is {0}. Press enter to continue.", trapezoidArea);
                             Console.ReadLine();
                         }
@@ -314,12 +319,62 @@ namespace ConsoleApp1
                         Console.WriteLine("1. Enter the base");
                         Console.WriteLine("2. Enter the height");
 
-                        if (parallelogramBaseOutput != 0) ;
+                        if (parallelogramBaseOutput != 0)
                         {
+                            Console.WriteLine("\nYour current base is {0}.", parallelogramBaseOutput);
+                        }
+                        if (parallelogramHeightOutput != 0)
+                        {
+                            Console.WriteLine("Your current height is {0}.", parallelogramHeightOutput);
+                        }
 
+                        Console.WriteLine("3. Caculate the area of your parallelogram");
+                        Console.WriteLine("4. Go back");
+
+                        parallelogramChoice = Console.ReadLine();
+                        Console.Clear();
+
+                        if (parallelogramChoice == "1")
+                        {
+                            Console.WriteLine("Please enter the base.");
+                            input = double.TryParse(Console.ReadLine(), out parallelogramBaseOutput);
+
+                            while (input == false)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Please enter a number value for the base.");
+                                Console.WriteLine("Please enter the base.");
+                                input = double.TryParse(Console.ReadLine(), out parallelogramBaseOutput);
+                            }
+                            Console.Clear();
+                        }
+
+                        if (parallelogramChoice == "2")
+                        {
+                            Console.WriteLine("Please enter the height.");
+                            input = double.TryParse(Console.ReadLine(), out parallelogramHeightOutput);
+
+                            while (input == false)
+                            {
+                                Console.WriteLine("Please enter a number value for the height.");
+                                Console.WriteLine("Please enter the height.");
+                                input = double.TryParse(Console.ReadLine(), out parallelogramHeightOutput);
+                            }
+                        }
+
+                        if (parallelogramChoice == "3")
+                        {
+                            parallelogramArea = parallelogramBaseOutput * parallelogramHeightOutput;
+                            Console.WriteLine("The area of your parallelogram is {0}. Press enter to continue.", parallelogramArea);
+                            Console.ReadLine();
+                            Console.Clear();
                         }
                     }
+                    while (parallelogramChoice != "4");
                 }
+
+                //Circle Shape
+                if (shape == 
             }
             while (shape != "6");
             Console.Clear();
